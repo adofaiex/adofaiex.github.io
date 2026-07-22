@@ -1,0 +1,1 @@
+var e={label:`Version:`,tag:`re_2.1.0`};export{e as t};
