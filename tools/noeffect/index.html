@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADOFAI NoEffect</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Material+Symbols+Outlined&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1 data-i18n="header.title">ADOFAI NoEffect</h1>
+      <p data-i18n="header.subtitle">支持批量处理多个ADOFAI谱面文件，包含自定义预设功能</p>
+      <div class="lang-bar">
+        <button class="lang-btn" data-lang="zh">中文</button>
+        <button class="lang-btn" data-lang="en">English</button>
+        <button class="lang-btn" data-lang="ja">日本語</button>
+        <button class="lang-btn" data-lang="ko">한국어</button>
+      </div>
+    </div>
+
+    <div class="card" id="effectCard">
+      <div class="card-header" data-i18n="effectType.title">选择去特效类型</div>
+      <div class="card-body">
+        <div class="chip-group" id="effectTypeGroup">
+          <label class="chip" data-value="preset_noeffect">
+            <input type="radio" name="effectType" value="preset_noeffect" checked hidden>
+            <span data-i18n="effectType.preset_noeffect">去常规特效</span>
+          </label>
+          <label class="chip" data-value="preset_noeffect_completely">
+            <input type="radio" name="effectType" value="preset_noeffect_completely" hidden>
+            <span data-i18n="effectType.preset_noeffect_completely">完全去特效</span>
+          </label>
+          <label class="chip" data-value="preset_noholds">
+            <input type="radio" name="effectType" value="preset_noholds" hidden>
+            <span data-i18n="effectType.preset_noholds">去长按</span>
+          </label>
+          <label class="chip" data-value="preset_nomovecamera">
+            <input type="radio" name="effectType" value="preset_nomovecamera" hidden>
+            <span data-i18n="effectType.preset_nomovecamera">去运镜</span>
+          </label>
+          <label class="chip" data-value="custom">
+            <input type="radio" name="effectType" value="custom" hidden>
+            <span data-i18n="effectType.custom">自定义预设</span>
+          </label>
+        </div>
+        <div id="customPresetBar" class="preset-bar" hidden>
+          <button class="btn outlined-btn icon-btn" id="importPresetBtn">
+            <span class="ms-icon">file_open</span>
+            <span data-i18n="preset.import">导入预设</span>
+          </button>
+          <button class="btn outlined-btn icon-btn" id="exportPresetBtn">
+            <span class="ms-icon">save</span>
+            <span data-i18n="preset.export">导出预设</span>
+          </button>
+          <span class="preset-info" id="presetInfo" data-i18n="preset.info">使用下方编辑器创建预设或导入JSON文件</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="presetEditorCard" hidden>
+      <div class="card-header">
+        <span class="ms-icon" style="font-size:20px">build</span>
+        <span data-i18n="preset.editor">预设编辑器</span>
+      </div>
+      <div class="card-body">
+        <div class="section">
+          <div class="section-title" data-i18n="preset.filterType">过滤类型</div>
+          <div class="chip-group" id="filterTypeGroup">
+            <label class="chip chip-sm" data-value="exclude">
+              <input type="radio" name="filterType" value="exclude" checked hidden>
+              <span data-i18n="preset.exclude">黑名单（排除选中的事件）</span>
+            </label>
+            <label class="chip chip-sm" data-value="include">
+              <input type="radio" name="filterType" value="include" hidden>
+              <span data-i18n="preset.include">白名单（只保留选中的事件）</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">
+            <span class="ms-icon" style="font-size:16px">event_note</span>
+            <span data-i18n="preset.regularEvents">常规事件（tile.actions）</span>
+          </div>
+          <div class="event-grid" id="regularEventsGrid"></div>
+          <div class="custom-event-row">
+            <input type="text" class="input" id="customEventInput" data-i18n-placeholder="preset.customEvent" placeholder="输入自定义常规事件">
+            <button class="btn outlined-btn btn-sm" id="addCustomEventBtn"><span data-i18n="preset.add">添加</span></button>
+          </div>
+          <div id="customEventsList"></div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">
+            <span class="ms-icon" style="font-size:16px">palette</span>
+            <span data-i18n="preset.decoEvents">装饰事件（decorations → tile.addDecorations）</span>
+          </div>
+          <div class="event-grid" id="decoEventsGrid"></div>
+          <div class="custom-event-row">
+            <input type="text" class="input" id="customDecoInput" data-i18n-placeholder="preset.customDeco" placeholder="输入自定义装饰事件">
+            <button class="btn outlined-btn btn-sm" id="addCustomDecoBtn"><span data-i18n="preset.add">添加</span></button>
+          </div>
+          <div id="customDecorationsList"></div>
+        </div>
+
+        <div class="btn-row">
+          <button class="btn filled-btn" id="applyPresetBtn"><span data-i18n="preset.apply">应用预设</span></button>
+          <button class="btn outlined-btn" id="clearPresetBtn"><span data-i18n="preset.clear">清空选择</span></button>
+          <button class="btn outlined-btn" id="selectAllEventsBtn"><span data-i18n="preset.selectAllRegular">全选常规</span></button>
+          <button class="btn outlined-btn" id="selectAllDecosBtn"><span data-i18n="preset.selectAllDeco">全选装饰</span></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="fileListCard">
+      <div class="card-header">
+        <div class="card-header-row">
+          <span class="card-title">
+            <span class="ms-icon" style="font-size:20px">description</span>
+            <span id="fileListTitle">文件列表（<span id="fileCount">0</span>）</span>
+          </span>
+          <div class="card-actions">
+            <button class="btn filled-btn btn-sm icon-btn" id="uploadBtn">
+              <span class="ms-icon">folder_open</span>
+              <span data-i18n="fileList.upload">选择文件</span>
+            </button>
+            <span class="badge" id="pendingBadge">0 待处理</span>
+            <span class="badge" id="completedBadge">0 已完成</span>
+            <span class="badge" id="errorBadge" hidden></span>
+            <button class="btn outlined-btn btn-sm icon-btn" id="clearAllBtn">
+              <span class="ms-icon">delete</span>
+              <span data-i18n="fileList.clear">清空</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="card-body" id="fileListBody">
+        <div class="drop-zone" id="dropZone">
+          <span class="ms-icon drop-zone-icon">upload_file</span>
+          <span data-i18n="fileList.dropzone">拖拽文件到此处或点击上方「选择文件」按钮</span>
+        </div>
+        <div class="file-list" id="fileList"></div>
+      </div>
+    </div>
+
+    <div class="card" id="batchCard" hidden>
+      <div class="card-body">
+        <div class="progress-area" id="progressArea" hidden>
+          <div class="progress-header">
+            <span data-i18n="batch.progress">批量处理进度</span>
+            <span id="progressText">0%</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        </div>
+        <div class="btn-row">
+          <button class="btn filled-btn btn-lg" id="processAllBtn" disabled>
+            <span class="ms-icon">play_arrow</span>
+            <span>处理全部（0）</span>
+          </button>
+          <button class="btn tonal-btn btn-lg" id="downloadAllBtn" disabled>
+            <span class="ms-icon">download</span>
+            <span>下载全部（0）</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <input type="file" id="fileInput" multiple accept=".adofai,application/json,.jsonc,.hjson" hidden>
+    <input type="file" id="presetFileInput" accept=".json" hidden>
+
+    <div class="alert alert-error" id="errorAlert" hidden>
+      <span class="ms-icon" style="font-size:20px">error</span>
+      <span id="errorMessage"></span>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/adofai@3.3.0/dist/umd/index.js"></script>
+  <script type="module" src="js/app.js"></script>
+</body>
+
+</html>
