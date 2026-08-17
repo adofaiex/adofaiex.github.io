@@ -28,5 +28,5 @@ features:
     details: 40+ public repositories, from mods and level libraries to charting tools.
   - icon: 🌍
     title: Multilingual
-    details: 简体中文 / English / 한국어 support, with more languages to come.
+    details: Simplified Chinese / English / 한국어 support, with more languages to come.
 ---
