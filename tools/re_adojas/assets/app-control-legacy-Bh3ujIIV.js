@@ -1,1 +1,0 @@
-System.register([],function(e,t){return{setters:[],execute:function(){e("t",{label:"Version:",tag:"re_2.1.0"})}}});

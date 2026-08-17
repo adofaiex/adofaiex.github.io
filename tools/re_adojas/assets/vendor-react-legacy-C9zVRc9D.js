@@ -1,1 +1,0 @@
-System.register(["./rolldown-runtime-legacy-DM0cW_Gm.js","./app-editor-legacy-BicK3W8R.js"],function(t,e){var o,r;return{setters:[function(t){o=t.t},function(t){r=t.et}],execute:function(){t("t",o(t=>{var e=r();t.createRoot=e.createRoot,t.hydrateRoot=e.hydrateRoot}))}}});
