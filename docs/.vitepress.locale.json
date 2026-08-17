@@ -1,0 +1,27 @@
+{
+  "label": "English",
+  "lang": "en",
+  "title": "ADOFAI Expansion Docs",
+  "description": "An organization researching and expanding ADOFAI — docs, online tools and open-source projects",
+  "nav": {
+    "guide": "Guide",
+    "learn": "Learning Path",
+    "mods": "User Guide",
+    "libs": "Library Docs"
+  },
+  "navExternal": [
+    { "text": "Modrift", "link": "https://modrift.org" }
+  ],
+  "ui": {
+    "outline": "On this page",
+    "prev": "Previous",
+    "next": "Next",
+    "lastUpdated": "Updated at",
+    "editLinkText": "Edit this page",
+    "darkModeSwitchLabel": "Appearance",
+    "lightModeSwitchLabel": "Appearance",
+    "sidebarMenuLabel": "Menu",
+    "returnToTopLabel": "Back to top",
+    "langMenuLabel": "Change language"
+  }
+}

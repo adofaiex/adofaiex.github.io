@@ -1,0 +1,27 @@
+{
+  "label": "한국어",
+  "lang": "ko",
+  "title": "ADOFAI Expansion 문서",
+  "description": "ADOFAI 기능을 연구하고 확장하는 조직 — 문서, 온라인 도구, 오픈소스 프로젝트",
+  "nav": {
+    "guide": "가이드",
+    "learn": "학습 경로",
+    "mods": "사용 가이드",
+    "libs": "라이브러리 문서"
+  },
+  "navExternal": [
+    { "text": "Modrift", "link": "https://modrift.org" }
+  ],
+  "ui": {
+    "outline": "이 페이지",
+    "prev": "이전",
+    "next": "다음",
+    "lastUpdated": "업데이트:",
+    "editLinkText": "이 페이지 편집",
+    "darkModeSwitchLabel": "모양",
+    "lightModeSwitchLabel": "모양",
+    "sidebarMenuLabel": "메뉴",
+    "returnToTopLabel": "맨 위로",
+    "langMenuLabel": "언어 변경"
+  }
+}

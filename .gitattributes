@@ -1,0 +1,2 @@
+# Exclude tools/ (static web tools) from GitHub language statistics
+tools/** linguist-vendored
