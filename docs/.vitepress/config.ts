@@ -1,33 +1,11 @@
 import { defineConfig } from 'vitepress'
 import type { DefaultTheme } from 'vitepress/theme'
-import type { Plugin } from 'vite'
-import sirv from 'sirv'
 import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const docsDir = fileURLToPath(new URL('..', import.meta.url))
-const toolsDir = fileURLToPath(new URL('../../tools', import.meta.url))
 const LOCALE_FILE = '.vitepress.locale.json'
-
-function toolsStatic(): Plugin {
-  const serve = sirv(toolsDir, { dev: true })
-  return {
-    name: 'adofaiex-tools-static',
-    configureServer(server) {
-      server.middlewares.use('/tools', (req, res, next) => {
-        if (!existsSync(toolsDir)) return next()
-        serve(req, res, next)
-      })
-    },
-    configurePreviewServer(server) {
-      server.middlewares.use('/tools', (req, res, next) => {
-        if (!existsSync(toolsDir)) return next()
-        serve(req, res, next)
-      })
-    }
-  }
-}
 
 interface LocaleMeta {
   label: string
@@ -333,9 +311,7 @@ export default defineConfig({
   markdown: {
     lineNumbers: true
   },
-  vite: {
-    plugins: [toolsStatic()]
-  },
+  vite: {},
   themeConfig: {
     i18nRouting: true,
     logo: { light: '/logo.svg', dark: '/logo-dark.svg' },
