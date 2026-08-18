@@ -58,8 +58,6 @@ The organization maintains 40+ public repositories. Below are the main projects 
 
 | Project | Description | Language |
 | --- | --- | --- |
-| [modrift](https://github.com/adofaiex/modrift) | A mod platform for Unity games | TypeScript |
-| [modrift-docs](https://github.com/adofaiex/modrift-docs) | Modrift documentation | - |
-| [Modrift-Desktop-Code](https://github.com/adofaiex/Modrift-Desktop-Code) | Modrift desktop source | C# |
+| [modrift.org](https://modrift.org) | A mod platform for Unity games (website) | - |
 
 > For the full list, visit the organization's [GitHub repositories](https://github.com/adofaiex?tab=repositories).

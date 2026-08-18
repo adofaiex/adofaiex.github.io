@@ -58,8 +58,6 @@ order: 2
 
 | 프로젝트 | 설명 | 언어 |
 | --- | --- | --- |
-| [modrift](https://github.com/adofaiex/modrift) | Unity 게임용 모드 플랫폼 | TypeScript |
-| [modrift-docs](https://github.com/adofaiex/modrift-docs) | Modrift 문서 | - |
-| [Modrift-Desktop-Code](https://github.com/adofaiex/Modrift-Desktop-Code) | Modrift 데스크톱 소스 | C# |
+| [modrift.org](https://modrift.org) | Unity 게임용 모드 플랫폼 (웹사이트) | - |
 
 > 전체 목록은 조직의 [GitHub 저장소](https://github.com/adofaiex?tab=repositories)를 참고하세요.

@@ -24,8 +24,6 @@ order: 2
 | [ADOFAI.EditorTweaks.BetterZip](https://github.com/adofaiex/ADOFAI.EditorTweaks.BetterZip) | 多格式谱面压缩包（ZIP/7z/RAR 等） | C# |
 | [ADOFAI.EditorTweaks.ChartRendering](https://github.com/adofaiex/ADOFAI.EditorTweaks.ChartRendering) | 谱面视频渲染（FFmpeg） | C# |
 | [ADOFAIMods](https://github.com/adofaiex/ADOFAIMods) | 编辑器扩展（FrequencyTrack 等）与 HUD 集合 | C# |
-| [MultiPlanet](https://github.com/adofaiex/MultiPlanet) | 解锁 MultiPlanet 事件 2–8 行星 | C# |
-| [Spectre](https://github.com/adofaiex/Spectre) | 回放与特效去除 Mod | C# |
 | [FerriteCore-ADOFAI](https://github.com/adofaiex/FerriteCore-ADOFAI) | ADOFAI 内存优化 | C# |
 | [Sarcary](https://github.com/adofaiex/Sarcary) | ADOFAI Mod API | C# |
 
@@ -63,8 +61,6 @@ order: 2
 
 | 项目 | 说明 | 语言 |
 | --- | --- | --- |
-| [modrift](https://github.com/adofaiex/modrift) | 面向 Unity 游戏的 Mod 平台 | TypeScript |
-| [modrift-docs](https://github.com/adofaiex/modrift-docs) | Modrift 文档 | - |
-| [Modrift-Desktop-Code](https://github.com/adofaiex/Modrift-Desktop-Code) | Modrift 桌面端源码 | C# |
+| [modrift.org](https://modrift.org) | 面向 Unity 游戏的 Mod 平台（网站） | - |
 
 > 完整仓库列表请访问组织的 [GitHub 仓库页](https://github.com/adofaiex?tab=repositories)。

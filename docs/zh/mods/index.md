@@ -18,8 +18,6 @@ order: 3
 - [FrequencyTrack](./freqtrack.md) —— 频率轨道铺设工具（EditorExtensions）
 - [NotEnoughAccuracy](./not-enough-accuracy.md) —— 毫秒级精度计算
 - [JustEnoughAccuracy](./just-enough-accuracy.md) —— 独立角度级精度判定
-- [MultiPlanet](./multiplanet.md) —— 解锁 2–8 行星
-- [Spectre](./spectre.md) —— 回放与特效去除
 - [ADOFAIMacro](./adofai-macro.md) —— 自动输入 / 宏
 - [AsyncInputOptimize](./async-input-optimize.md) —— 异步输入优化
 - [ADOFAI.EditorTweaks.BetterZip](./adofai-editor-tweaks-betterzip.md) —— 多格式谱面压缩包

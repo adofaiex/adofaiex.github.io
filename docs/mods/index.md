@@ -18,8 +18,6 @@ This is a collection of usage tutorials for the organization's projects: **Mod i
 - [FrequencyTrack](./freqtrack.md) — Frequency track laying tool (EditorExtensions)
 - [NotEnoughAccuracy](./not-enough-accuracy.md) — Millisecond-level accuracy calculation
 - [JustEnoughAccuracy](./just-enough-accuracy.md) — Independent angle-level accuracy judgment
-- [MultiPlanet](./multiplanet.md) — Unlock 2–8 planets
-- [Spectre](./spectre.md) — Replay & effect removal
 - [ADOFAIMacro](./adofai-macro.md) — Auto input / macro
 - [AsyncInputOptimize](./async-input-optimize.md) — Async input optimization
 - [ADOFAI.EditorTweaks.BetterZip](./adofai-editor-tweaks-betterzip.md) — Multi-format chart archives
